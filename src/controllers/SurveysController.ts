@@ -14,11 +14,12 @@ class SurveysController {
         });
 
         await surveysRepository.save(survey);
+        console.log('ALL', survey)
 
         return response.status(201).json(survey);
     }
 
-    async show(reques:Request, response:Response){
+    async show(request: Request, response: Response) {
         const surveysRepository = getCustomRepository(SurveysRepository);
 
         const all = await surveysRepository.find();
